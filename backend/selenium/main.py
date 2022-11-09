@@ -1,4 +1,5 @@
 from ast import main
+import sys
 import unittest 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -33,4 +34,5 @@ class PythonOrgSearch(unittest.TestCase):
 
 if __name__ == '__main__':
     # unittest.main()
+    print(sys.argv[1])
     print("Hey man")

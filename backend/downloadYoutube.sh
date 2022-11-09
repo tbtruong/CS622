@@ -3,4 +3,4 @@
 
 
 
- python ./selenium/main.py $1;
+ python ./selenium/youtube/youtubeMain.py $1;
