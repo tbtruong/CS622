@@ -1,6 +1,6 @@
 const { exec } = require('child_process');
 
- exec('sh downloadYoutube.sh "benchpress"',
+ exec('sh downloadYoutube.sh "travel"',
         (error, stdout, stderr) => {
             console.log(stdout);
             console.log(stderr);
@@ -8,5 +8,3 @@ const { exec } = require('child_process');
                 console.log(`exec error: ${error}`);
             }
 });
-
-console.log("JAVSCRIPT")

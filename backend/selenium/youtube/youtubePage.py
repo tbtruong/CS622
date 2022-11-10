@@ -1,8 +1,11 @@
 from youtubeLocator import *
 from youtubeElement import BasePageElement
+import time
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
 
 class SearchTextElement(BasePageElement):
-    locator = "/html/body/ytd-app/div[1]/div/ytd-masthead/div[3]/div[2]/ytd-searchbox/form/div[1]/div[1]/input"
+    locator = '//input[@id="search"]'
 
 class BasePage(object):
     def __init__(self, driver):
@@ -21,5 +24,32 @@ class SearchResultPage(BasePage):
 
     def is_results_found(self):
         return "No results found." not in self.driver.page_source
+    
+    def getResults(self):
+        results = []
+
+        #
+        WebDriverWait(self.driver, 5).until(lambda driver: self.driver.find_element(*SearchResultsPageLocator.FIRST_VIDEO_LOCATOR))
+        firstVideo = self.driver.find_element(*SearchResultsPageLocator.FIRST_VIDEO_LOCATOR)
+        firstVideo.click()
+        results.append(self.driver.current_url)
+        self.driver.back()
+    
+        # self.driver.execute_script("window.history.go(-1)")
+        self.driver.refresh()
+        WebDriverWait(self.driver, 5).until(lambda driver: self.driver.find_element(*SearchResultsPageLocator.SECOND_VIDEO_LOCATOR))
+        time.sleep(10)
+        # print(results)
+        # time.sleep(5)
+
+        secondVideo = self.driver.find_element(*SearchResultsPageLocator.SECOND_VIDEO_LOCATOR)
+        secondVideo.click()
+        results.append(self.driver.current_url)
+        time.sleep(10)
+
+        return results
+        
+       
+
 
 

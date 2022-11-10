@@ -1,3 +1,4 @@
 node_modules
 /selenium/__pycache__/
 /selenium/youtube/__pycache__/
+/static/
