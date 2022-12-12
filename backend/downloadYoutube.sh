@@ -1,6 +1,6 @@
 # python ./selenium/hello.py
-# yt-dlp "https://www.youtube.com/watch?v=36oLu_8MQW0&list=RD36oLu_8MQW0&index=1&ab_channel=BBCRadio1VEVO"
+yt-dlp ytsearch4:"10 second timer"
 
 
 
- python ./selenium/youtube/youtubeMain.py $1;
+# python ./selenium/youtube/youtubeMain.py $1;

@@ -1,6 +1,6 @@
 const { exec } = require('child_process');
 
- exec('sh downloadYoutube.sh "travel"',
+ exec('sh downloadYoutube.sh',
         (error, stdout, stderr) => {
             console.log(stdout);
             console.log(stderr);
